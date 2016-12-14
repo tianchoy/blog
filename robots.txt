@@ -1,0 +1,1 @@
+User-agent: *Disallow: /css/Disallow: /admin.phpDisallow: /del.phpDisallow: /edit.phpDisallow: /login.phpDisallow: /add_artcle.phpDisallow: /add_talk.phpDisallow: /db.phpDisallow: /install.phpDisallow: /reg.phpDisallow: /images/
