@@ -2,7 +2,7 @@
 include_once 'db.php';
 include_once './inc/meta.php';
 ?>
-<title>站内搜索—田超的博客|原创独立个人博客</title>
+<title>站内搜索—田超的博客-原创独立个人博客</title>
 <?php
 include_once './inc/header.php';
 ?>

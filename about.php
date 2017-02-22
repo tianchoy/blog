@@ -1,7 +1,7 @@
 <?php
   include_once './inc/meta.php';
 ?>
-<title>关于我-田超的博客|原创独立个人博客</title>
+<title>关于我-田超的博客-原创独立个人博客</title>
 <?php
 include_once "./inc/header.php";
 ?>
@@ -31,18 +31,6 @@ include_once "./inc/header.php";
                 <p>就像它刚刚被发明出来一样！</p>
                 <p>我是田超，谢谢你来看我的博客。</p>
             </div>
-            <div class="list-group pay">
-                <h3><span class="glyphicon glyphicon-heart"></span><a>随意打赏</a></h3>
-                <div class="col-sm-3">
-                    <img src="images/wechatpay.jpg"><br/>
-                    <small>（微信）</small>
-                </div>
-                <div class="col-sm-3">
-                    <img src="images/alipay.jpg"><br/>
-                    <small>（支付宝）</small>
-                </div>
-
-            </div>
         </div>
     </div>
     <div class="col-sm-4">
@@ -55,15 +43,12 @@ include_once "./inc/header.php";
                 <p>V-XII-MMXI / X-XVI-MMXV</p>
                 <p>网名：田超7C | 爱在枫叶下</p>
                 <p>职业：Web前端学徒，PHP孵蛋阶段的程序员</p>
-                <p>Email：tianchao7c@sina.com</p>
-                <p>苟延残喘的梦想：http://site.douban.com/tianchao/</p>
+                <p>Email：tianchao7c@gmail.com</p>
+                <div class="music"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=544615954&auto=0&height=32"></iframe></div>
             </div>
-            <div class="panel-body">
-                <iframe width="100%" height="550" class="share_self" frameborder="0" scrolling="yes"
-                        src="http://widget.weibo.com/weiboshow/index.php?language=&amp;width=0&amp;height=550&amp;
-                        fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=1&amp;isTitle=1&amp;noborder=1&amp;isWeibo=1&amp;
-                        isFans=1&amp;uid=2114765444&amp;verifier=589dc79b&amp;dpc=1">
-                </iframe>
+            <div class="panel-body aboutMe">
+                <p>请关注我的微信公众号：<strong>tianchaocc</strong></p>
+                <img src="images/getqrcode.jpeg">
             </div>
         </div>
     </div>

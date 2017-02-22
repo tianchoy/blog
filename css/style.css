@@ -34,28 +34,45 @@ h5{border-bottom: 1px dashed #e5e5e5;padding-bottom: 10px;}
 .donate img{max-width: 50%;display: none;}
 .original{width: 100%;margin:30px auto 10px auto;font-size: 12px;color:#bbb; }
 .time{width: 100%;margin: 20px auto 0 auto;padding-bottom:10px;border-bottom: 1px solid #eee;color:#666;overflow: hidden;}
-.time small{display: block;color:#999}
+.time small{color:#999}
 .time img{display:inline-block;margin:-5px 5px 0 0;}
 .time .view{display: inline-block;margin: -1px 5px 0 10px;width: 16px;}
 .time a{font-size: 12px;display: inline-block;color:#999;}
 .lyb{margin:0 auto;padding:0 100px}
-.lgi{margin-bottom:5px;border-radius:5px;overflow: hidden;}
-.ly_reply{border-top: 1px dashed #ededed;padding-top: 10px; font-size: 12px;color:#999;}
-.ly_reply em{color:#FFA500;font-size: 12px;font-style: normal;border-left:2px solid #FFA500;padding-left: 5px;float: left;margin-right: 10px;}
+.lgi{margin-bottom:20px;border-radius:5px;overflow: hidden;}
+.ly_reply{padding-top: 10px; font-size: 12px;color:#999;}
+.ly_reply em{color:#FFA500;font-size: 12px;font-style: normal;border-left:2px solid #FFA500;padding-left: 5px;float: left;margin: 0 10px 5px 0;}
 .ly_reply .re_con{float: left;}
-.ly_reply span{float: right;color:#999;font-size: 12px;}
+.ly_reply span{color:#999;font-size: 12px;}
 .yiyue{font-size: 14px;color:#d52a3a;}
 .yiyue b{font-weight: 300;}
 .about p {line-height:27px;}
 .about h3 {line-height: 30px;}
 .panel-body p {line-height: 25px;}
+.aboutMe p{text-align: center}
+.aboutMe img{display: block;max-width: 50%;margin: 0 auto;}
 .pay{margin-top:100px;}
 .pay h3{color:red;font-weight: bold;}
 .pay small{margin-left:20px;}
 .pay h3 a{margin-left:10px;color:red;}
 .pay h3 span{margin-top:2px;}
 .notFound{text-align: center;}
-/*留言板表情*/
+.love{display: inline-block;float: right;font-size: 16px;}
+.love i.loveIcon{display: inline-block;width: 16px;height:16px;margin-right: 5px;background: url(../images/love.png)no-repeat left center;}
+.love em{font-style: normal;}
+.say p{line-height: 25px;}
+
+.lgi .user_photo{float:left;width: 30px;height:30px;border-radius: 50%;border:1px solid transparent;margin-top: 7px;}
+.lgi .main{position: relative;margin-left: 20px;border:1px solid #dedede;float: left;width: 88%;}
+.lgi .main i{position: absolute;top: -35px;left: -6px;border-right: 1px solid #dedede;border-top: 1px solid #dedede;height: 10px;width: 12px;margin: 50px auto 0;transform: rotate(deg);-webkit-transform: rotate(-131deg);border-left: 2px solid transparent;border-bottom: 2px solid transparent;background: #f8f8f8;}
+.lgi .main .head{background-color: #f8f8f8;color:#999;padding:10px 20px;font-size: 12px}
+.lgi .main .head b{margin-right: 5px;}
+.lgi .main .content{padding:15px;overflow: hidden}
+.lgi .main .content p{margin-bottom: 20px;}
+.lgi .main .content blockquote{padding: 10px 0 5px 10px;font-size: 13px;overflow: hidden}
+.lgi .main .content blockquote p{margin-bottom: 10px;width: 100%;color:#666}
+.lgi .main .content blockquote span{color:#999;font-size: 12px;font-family: Georgia,"Times New Roman",Times,Kai,"Kaiti SC",KaiTi,BiauKai,FontAwesome,serif}
+    /*留言板表情*/
 .send textarea{width: 97%;border-radius:5px;padding:5px;}
 .send .hf_text{height: 35px;}
 .send a.btn{padding:5px 20px;display: block;color: #fff;background: #ff4c51;border-radius: 3px;text-decoration: none;font-size: 14px;font-weight: bold;float: left;margin-top: 5px;}

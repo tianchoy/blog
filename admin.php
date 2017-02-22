@@ -49,11 +49,11 @@ include_once './inc/header.php';
                 ?>
                 <div class="list-group-item">
                     <h5>
-                        <a href="view.php?id=<?php echo $row['id']?>" target="_blank"><?php echo $row['title']?></a> |
-                            <a href="edit.php?edit=<?php echo $row['id']?>">编辑</a> |
-                            <a href="del.php?del=<?php echo $row['id']?>">删除</a> |
+                        <a href="view.php?id=<?php echo $row['id']?>" target="_blank"><?php echo $row['title']?></a> /
+                            <a href="edit.php?edit=<?php echo $row['id']?>">编辑</a> /
+                            <a href="del.php?del=<?php echo $row['id']?>">删除</a> /
                             点击量：<span class="badge"><?php echo $row['hits']?></span>
-                            | <?php echo $row['time']?>
+                            / 点赞：<?php echo $row['art_love'] ?> / <?php echo $row['time']?>
                     </h5>
                     <p><?php echo iconv_substr($row['content'],0,100,'utf-8');?>...</p>
                 </div>

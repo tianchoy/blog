@@ -3,7 +3,7 @@
   require_once 'db.php';
   include_once'./inc/meta.php';
 ?>
-	<title>说说—田超的博客|原创独立个人博客</title>
+	<title>说说—田超的博客-原创独立个人博客</title>
 <?php
 include_once './inc/header.php';
 ?>
@@ -22,10 +22,12 @@ include_once './inc/header.php';
                   $query = "select * from `say` order by id DESC limit $offset,$pagesize";  //查询数据
                   $res=mysql_query($query);
                   while ($row=mysql_fetch_array($res)){ //循环开始
+                      $pic_id = $row['id'];
                 ?>
-				    <li class="list-group-item lgi">
+				    <li class="list-group-item lgi say">
                         <p><small><?php echo $row['time']?></small></p>
                         <p><?php echo iconv_substr($row['content'],0,200,'utf-8');?></p>
+                        <span class="love"><i class="loveIcon" rel="<?php echo $pic_id;?>"></i><?php echo $row['zan'] ?></span>
 					</li>
                 <?php
                   }
@@ -59,3 +61,19 @@ include_once './inc/header.php';
 	<p id="back-to-top"><a href="#top"><img src="images/backtop.png"></a></p>
 </div>
 <?php include_once'./inc/footer.php'?>
+<script>
+    $(".love i").on('click',function(){
+        var love = $(this);
+        var id = love.attr("rel"); //对应id
+        $.ajax({
+            type:"POST",
+            url:"say_like.php",
+            data:"id="+id,
+            cache:false, //不缓存此页面
+            success:function(data){
+                love.html(data);
+            }
+        });
+        return false;
+    });
+</script>

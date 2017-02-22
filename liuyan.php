@@ -3,7 +3,7 @@ session_start();
 include_once 'db.php';
 include_once './inc/meta.php';
 ?>
-<title>留言板-田超的博客|原创独立个人博客</title>
+<title>留言板-田超的博客-原创独立个人博客</title>
 <?php
 include_once './inc/header.php';
 ?>
@@ -11,9 +11,12 @@ include_once './inc/header.php';
 if(isset($_POST['submit'])){
   $lyname = $_POST['name'];
   $lycontent = $_POST['content'];
+    $user_IP = ($_SERVER["HTTP_VIA"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
+    $user_IP = ($user_IP) ? $user_IP : $_SERVER["REMOTE_ADDR"];
+
     if($_REQUEST['vericode'] == $_SESSION['authcode']){
       	if($lyname != '' && $lycontent != ''){
-          $query = "insert into `liuyan` (`id`,`name`,`content`,`time`) values (NULL,'$lyname','$lycontent',now())";
+          $query = "insert into `liuyan` (`id`,`name`,`content`,`time`,`ip`) values (NULL,'$lyname','$lycontent',now(),'$user_IP')";
         if(mysql_query($query)){
               echo '<script>alert("恭喜你，留言成功啦！");window.location.href="liuyan.php"</script>';
         }else{
@@ -83,14 +86,20 @@ if(isset($_POST['submit'])){
                   $result = mysql_query($query);
                   while ($row = mysql_fetch_array($result)){
                       ?>
-                      <li class="list-group-item lgi">
-                          <h4><?php echo $row['name'] ?> <small>说：</small><small class="pull-right plTime"><?php echo $row['time'] ?></small></h4>
-                          <p><?php echo iconv_substr($row['content'],0,200,'utf-8');?></p>
-                          <div class="ly_reply"><em>田超回复：</em>
-                              <span class="re_con"><?php echo $row['huifu_content'] ?></span>
-                              <span><?php echo $row['huifu_time'] ?></span>
+                      <div class="lgi">
+                          <img src="images/user_photo.png" class="user_photo">
+                          <div class="main">
+                              <i></i>
+                              <div class="head"><b><?php echo $row['name'] ?></b>评论于：<time><?php echo $row['time'] ?></time></div>
+                              <div class="content">
+                                  <p><?php echo iconv_substr($row['content'],0,200,'utf-8');?></p>
+                                  <blockquote class="ly_reply">
+                                      <p class="re_con"><?php echo $row['huifu_content'] ?></p>
+                                      <span>田超回复于：<?php echo $row['huifu_time'] ?></span>
+                                  </blockquote>
+                              </div>
                           </div>
-                      </li>
+                      </div>
                       <?php
                   }
                   ?>

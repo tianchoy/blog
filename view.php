@@ -13,9 +13,11 @@ $result = mysql_query($query);
 if(isset($_POST['submit'])){
     $uname = $_POST['username'];
     $plcontent = $_POST['content'];
+    $user_IP = ($_SERVER["HTTP_VIA"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
+    $user_IP = ($user_IP) ? $user_IP : $_SERVER["REMOTE_ADDR"];
     if($_REQUEST['vericode'] == $_SESSION['authcode']){
         if($uname != '' && $plcontent != ''){
-            $query = "insert into `reply` (`r_id`,`art_id`,`name`,`pl_content`,`pl_time`) values (NULL,'$id','$uname','$plcontent',now())";
+            $query = "insert into `reply` (`r_id`,`art_id`,`name`,`pl_content`,`pl_time`，`ip`) values (NULL,'$id','$uname','$plcontent',now(),'$user_IP')";
             if(mysql_query($query)){
                 echo "<script>alert('评论成功啦！');window.location.href='view.php?id=$id'</script>";
             }else{
@@ -31,7 +33,7 @@ if(isset($_POST['submit'])){
     die;
 }
 ?>
-<title><?php echo $row['title']?>-田超的博客|原创独立个人博客</title>
+<title><?php echo $row['title']?>-田超的博客-原创独立个人博客</title>
 <?php
   include_once './inc/header.php';
 ?>
@@ -54,6 +56,7 @@ if(isset($_POST['submit'])){
                             <img src="images/time.png" title="发布时间"><?php echo $row['time']?>
                             <img src="images/eye.png" title="阅读量" class="view"><a><?php echo $row['hits']?></a>
                         </small>
+                        <span class="love"><i class="loveIcon"></i><em rel="<?php echo $row['id']; ?>"><?php echo $row['art_love'] ?></em></span>
                     </div>
                     <div class="col-sm-3 blog-side-m">
                         <div class="recommend">
@@ -122,15 +125,20 @@ if(isset($_POST['submit'])){
                             $result = mysql_query($query);
                             while ($row = mysql_fetch_array($result)){
                                 ?>
-                                <li class="list-group-item lgi">
-                                    <h4><?php echo $row['name'] ?> <small>说：</small><small class="pull-right plTime">
-                                            <?php echo $row['pl_time'] ?></small></h4>
-                                    <p><?php echo iconv_substr($row['pl_content'],0,200,'utf-8');?></p>
-                                    <div class="ly_reply"><em>作者回复：</em>
-                                        <span class="re_con"><?php echo $row['repl_content'] ?></span>
-                                        <span><?php echo $row['repl_time'] ?></span>
+                                <div class="lgi">
+                                    <img src="images/user_photo.png" class="user_photo">
+                                    <div class="main">
+                                        <i></i>
+                                        <div class="head"><b><?php echo $row['name'] ?></b>评论于：<time><?php echo $row['pl_time'] ?></time></div>
+                                        <div class="content">
+                                            <p><?php echo iconv_substr($row['pl_content'],0,200,'utf-8');?></p>
+                                            <blockquote class="ly_reply">
+                                                <p class="re_con"><?php echo $row['repl_content'] ?></p>
+                                                <span>田超回复于：<?php echo $row['repl_time'] ?></span>
+                                            </blockquote>
+                                        </div>
                                     </div>
-                                </li>
+                                </div>
                                 <?php
                             }
                             ?>
@@ -177,4 +185,21 @@ if(isset($_POST['submit'])){
 </div>
 <?php require_once'./inc/footer.php' ?>
 <script type="text/javascript" src="./js/face.js"></script>
+<script src="js/pl.js"></script>
 <script src="js/404.js"></script>
+<script>
+    $(".love").on('click',function(){
+        var love = $(".love em");
+        var id = love.attr("rel"); //对应id
+        $.ajax({
+            type:"POST",
+            url:"art_like.php",
+            data:"id="+id,
+            cache:false, //不缓存此页面
+            success:function(data){
+                love.html(data);
+            }
+        });
+        return false;
+    });
+</script>

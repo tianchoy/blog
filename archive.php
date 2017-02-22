@@ -1,7 +1,7 @@
 <?php
 include_once './inc/meta.php';
 ?>
-<title>归档—田超的博客|原创独立个人博客</title>
+<title>归档—田超的博客-原创独立个人博客</title>
 <?php
 include_once './inc/header.php';
 include_once 'db.php';
