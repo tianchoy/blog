@@ -128,7 +128,7 @@ if(isset($_POST['submit'])){
                                 <div class="lgi">
                                     <img src="images/user_photo.png" class="user_photo">
                                     <div class="main">
-                                        <i></i>
+                                        <em></em>
                                         <div class="head"><b><?php echo $row['name'] ?></b>评论于：<time><?php echo $row['pl_time'] ?></time></div>
                                         <div class="content">
                                             <p><?php echo iconv_substr($row['pl_content'],0,200,'utf-8');?></p>

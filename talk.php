@@ -24,11 +24,17 @@ include_once './inc/header.php';
                   while ($row=mysql_fetch_array($res)){ //循环开始
                       $pic_id = $row['id'];
                 ?>
-				    <li class="list-group-item lgi say">
-                        <p><small><?php echo $row['time']?></small></p>
-                        <p><?php echo iconv_substr($row['content'],0,200,'utf-8');?></p>
-                        <span class="love"><i class="loveIcon" rel="<?php echo $pic_id;?>"></i><?php echo $row['zan'] ?></span>
-					</li>
+                  <div class="lgi say">
+                      <img src="images/logo2.jpg" class="user_photo">
+                      <div class="main">
+                          <em></em>
+                          <div class="head"><b>田超</b>发布于：<time><?php echo $row['time'] ?></time></div>
+                          <div class="content">
+                              <p><?php echo iconv_substr($row['content'],0,200,'utf-8');?></p>
+                          </div>
+                          <span class="love"><i class="loveIcon" rel="<?php echo $pic_id;?>"></i><?php echo $row['zan'] ?></span>
+                      </div>
+                  </div>
                 <?php
                   }
                 ?>
