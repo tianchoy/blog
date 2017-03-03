@@ -38,9 +38,8 @@ h5{border-bottom: 1px dashed #e5e5e5;padding-bottom: 10px;}
 .time img{display:inline-block;margin:-5px 5px 0 0;}
 .time .view{display: inline-block;margin: -1px 5px 0 10px;width: 16px;}
 .time a{font-size: 12px;display: inline-block;color:#999;}
-.time .love{float: right;}
 .lyb{margin:0 auto;padding:0 100px}
-.lgi{margin-bottom:30px;border-radius:5px;overflow: hidden;}
+.lgi{margin-bottom:20px;border-radius:5px;overflow: hidden;}
 .ly_reply{padding-top: 10px; font-size: 12px;color:#999;}
 .ly_reply em{color:#FFA500;font-size: 12px;font-style: normal;border-left:2px solid #FFA500;padding-left: 5px;float: left;margin: 0 10px 5px 0;}
 .ly_reply .re_con{float: left;}
@@ -58,45 +57,36 @@ h5{border-bottom: 1px dashed #e5e5e5;padding-bottom: 10px;}
 .pay h3 a{margin-left:10px;color:red;}
 .pay h3 span{margin-top:2px;}
 .notFound{text-align: center;}
-.say .love,.time .love{display: block;float: left;font-size: 14px;margin: 0 0 5px 15px;color:#999}
-.say .love i.loveIcon,.time .love i.loveIcon{display: inline-block;width: 14px;height:14px;margin-right: 5px;background: url(../images/love.png)no-repeat left center;}
-.say .love em,.time .love em{font-style: normal;}
+.love{display: inline-block;float: right;font-size: 16px;}
+.love i.loveIcon{display: inline-block;width: 16px;height:16px;margin-right: 5px;background: url(../images/love.png)no-repeat left center;}
+.love em{font-style: normal;}
 .say p{line-height: 25px;}
-.time .love{float: right}
 
-.lgi .user_photo{float:left;width: 40px;height:40px;border-radius: 50%;}
-.lgi .main{position: relative;margin-left: 10px;border:1px solid #dedede;float: left;width: 81%;}
-.lgi .main em{position: absolute;top: -35px;left: -6px;border-right: 1px solid #dedede;border-top: 1px solid #dedede;height: 10px;width: 12px;margin: 50px auto 0;transform: rotate(deg);-webkit-transform: rotate(-131deg);border-left: 2px solid transparent;border-bottom: 2px solid transparent;background: #f8f8f8;}
+.lgi .user_photo{float:left;width: 30px;height:30px;border-radius: 50%;border:1px solid transparent;margin-top: 7px;}
+.lgi .main{position: relative;margin-left: 20px;border:1px solid #dedede;float: left;width: 88%;}
+.lgi .main i{position: absolute;top: -35px;left: -6px;border-right: 1px solid #dedede;border-top: 1px solid #dedede;height: 10px;width: 12px;margin: 50px auto 0;transform: rotate(deg);-webkit-transform: rotate(-131deg);border-left: 2px solid transparent;border-bottom: 2px solid transparent;background: #f8f8f8;}
 .lgi .main .head{background-color: #f8f8f8;color:#999;padding:10px 20px;font-size: 12px}
 .lgi .main .head b{margin-right: 5px;}
 .lgi .main .content{padding:15px;overflow: hidden}
 .lgi .main .content p{margin-bottom: 20px;}
-.lgi .main .content blockquote{padding: 5px 0 5px 10px;font-size: 13px;margin:0;overflow: hidden}
+.lgi .main .content blockquote{padding: 10px 0 5px 10px;font-size: 13px;overflow: hidden}
 .lgi .main .content blockquote p{margin-bottom: 10px;width: 100%;color:#666}
-.lgi .main .content blockquote span{color:#999;font-size: 12px;}
-
-.say img{width: 30px;height: 30px;border-radius: 50%;}
-.say .main .content p{margin-bottom: 0;}
-
-/*  留言板和评论框css  */
-.gb-box{margin-bottom: 40px;}
-.comment-form{position: relative;margin: 0 auto;max-width:700px;padding: 10px 20px;border-radius: 3px;background: #fff;-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.1);box-shadow: 0 1px 4px rgba(0,0,0,.1);}
-.comment-form input{font-size: 13px;display: block;width: 100%;height: 34px;color: #313131;outline: 0;float: left;max-width: 200px;border:0;border-bottom: 1px dashed #ddd;border-radius: 0;}
-.comment-form textarea{font-size: 13px;display: block;width: 100%;color: #313131;border:0;outline: 0;overflow: hidden;height: 150px;padding: 10px 0;resize: none;border-radius: 0;}
-.submit{font-size: 13px;position: absolute;right: 20px;bottom: 20px;display: block;height: 32px;margin: 0 auto;padding: 0 20px;-webkit-transition-duration: .4s;transition-duration: .4s;text-align: center;color: #313131;border: 1px solid #f7f7f7;border-radius: 30px;background-color: #f7f7f7;}
-.comment-form .faces{position: absolute;right: 100px;bottom: 20px;width: 25px;height: 25px;color: #333;text-align: right;line-height: 22px;font-size: 12px;display: block;float: right;background: url(../images/faces.png)no-repeat left center;margin-right: 20px;margin-top: 5px;background-position: 0 0;}
-.face{overflow: hidden;display: none;max-width: 700px;margin: 10px auto 0 auto;}
+.lgi .main .content blockquote span{color:#999;font-size: 12px;font-family: Georgia,"Times New Roman",Times,Kai,"Kaiti SC",KaiTi,BiauKai,FontAwesome,serif}
+    /*留言板表情*/
+.send textarea{width: 97%;border-radius:5px;padding:5px;}
+.send .hf_text{height: 35px;}
+.send a.btn{padding:5px 20px;display: block;color: #fff;background: #ff4c51;border-radius: 3px;text-decoration: none;font-size: 14px;font-weight: bold;float: left;margin-top: 5px;}
+.send a.btn:hover{background: #c53d41;-webkit-transition:all 0.2s linear;-moz-transition:all 0.2s linear;-ms-transition:all 0.2s linear;-o-transition:all 0.2s linear;transition:all 0.2s linear;}
+.send .faces{width: 25px;height:25px;color:#333;text-align: right;line-height: 22px;font-size: 12px;display: block;float: right;background: url(../images/faces.png)no-repeat left center ; margin-right:20px;margin-top:5px;background-position: 0 0;}
+.send .on{background-position: left bottom;}
+.face{overflow: hidden;display: none;}
 .face li{width: 22px;height: 22px;margin:3px;float: left;list-style-type: none;}
-
-
-
-
 
 /*  文章评论css  */
 .TCPingLunBox{margin: 50px auto;padding:0;}
 .TCPingLunBox label{color:#666;font-size: 14px;font-weight: 400;}
-#vericode_img{width: 175px;height:34px;display: inline-block;float: left;border:1px solid #ccc;}
-.changecode{display: inline-block;width: 65px;height: 34px;line-height: 34px;text-align: center;color:#666}
+#vericode_img{width: 200px;height:34px;display: inline-block;float: left;border:1px solid #ccc;margin-right:10px;}
+.changecode{display: inline-block;width: 100px;height: 34px;line-height: 34px;text-align: center;color:#666}
 .lgi .plTime{font-size: 12px;}
 .in_footer{text-align: left}
 
@@ -109,7 +99,6 @@ h5{border-bottom: 1px dashed #e5e5e5;padding-bottom: 10px;}
     .original{width:80%;}
     .time{width: 80%;}
     .notFound{margin: 10% auto;}
-	.lgi .main{width:93%;}
     p#back-to-top{position:fixed;  display:none;  bottom:10px;  right:0;  }
     p#back-to-top a{text-align:center;  text-decoration:none;  color:#d1d1d1;  display:block;  width:64px;  -moz-transition:color 1s;  -webkit-transition:color 1s;  -o-transition:color 1s;  }
     p#back-to-top a:hover{color:#979797;}
