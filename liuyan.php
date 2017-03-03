@@ -33,42 +33,18 @@ if(isset($_POST['submit'])){
 ?>
   <div class="container">
       <div class="row">
-          <div class="col-sm-10 col-sm-offset-1">
-                <form class="form-horizontal" action=""  method="post" onsubmit="return liuyan()">
-                    <div class="form-group">
-                            <label class="col-sm-2 control-label">称呼：</label>
-                            <div class="col-sm-5">
-                                <input class="form-control user" type="text" name="name" placeholder="请输入您的称呼?"  />
-                                <small class="name-prompt"></small>
-                            </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">内容：</label>
-                        <div class="col-sm-9 send">
-                            <textarea class="form-control content" name="content" rows="10" placeholder="不超过200个字"></textarea>
-                            <small class="content-prompt"></small>
-                            <a href="javascript:;" class='faces'></a>
-                            <div class="face"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">验证：</label>
-                        <div class="col-sm-2">
-                            <input class="form-control veri" type="text" name="vericode">
-                        </div>
-                        <div class="col-sm-6">
-                            <img id="vericode_img" border="0" src="veri_zh.php?r=<?php echo rand();?>" />
-                            <a href="javascript:;" class="changecode" onclick="document.getElementById('vericode_img').src='veri_zh.php?r='+Math.random()">换一个？</a>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2">
-                            <div class="col-sm-2">
-                                <button type="submit" name="submit" class="btn btn-primary submit">好了，发布吧</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+          <div class="col-sm-10 col-sm-offset-1 gb-box">
+              <form class="comment-form" action="" method="post" onsubmit="return liuyan()">
+                  <input type="text" name="name" class="input-control" placeholder="姓名(*)">
+                  <input type="text" name="vericode" class="input-control" placeholder="验证码">
+                  <div><img id="vericode_img" border="0" src="veri_zh.php?r=<?php echo rand();?>" />
+                      <a href="javascript:;" class="changecode" onclick="document.getElementById('vericode_img').src='veri_zh.php?r='+Math.random()">换一个？</a>
+                  </div>
+                  <textarea name="content" class="text-control"></textarea>
+                  <a href="javascript:;" class='faces'></a>
+                  <button type="submit" name="submit" class="btn btn-primary submit">提交</button>
+              </form>
+              <div class="face"></div>
           </div>
       </div>
       <div class="row">

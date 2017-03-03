@@ -2,32 +2,32 @@
 		face:function(_this){
 			var target = $(_this).html();
 			if(target.length < 5){
-				$(_this).html("<img src='../images/face/"+target+".gif' />")
+				$(_this).html("<img src='images/face/"+target+".gif' />")
 			}
 		},
 		faceimg:'',
 		imgs:function(min,max){
 			for(i=min;i<max;i++){  //通过循环创建60个表情，可扩展
-        		tianchao.faceimg+='<li><a href="javascript:void(0)"><img src="../images/face/'+(i+1)+'.gif" face="<emt>'+(i+1)+'</emt>"/></a></li>';
+        		tianchao.faceimg+='<li><a href="javascript:void(0)"><img src="images/face/'+(i+1)+'.gif" face="<emt>'+(i+1)+'</emt>"/></a></li>';
     		};
 		},
 		cur:0
 	}
-	$('.list li emt').each(function(){
+	$('.list emt').each(function(){
 		tianchao.face(this);
 	});
-	$('.send a.btn').on('click',function(){
-		var content = $('.send textarea').val();
+	$('.a.btn').on('click',function(){
+		var content = $('.text-control').val();
         $('.list').append("<li>"+content+"</li>");
-		var s = $('.send textarea').val('');
+		var s = $('.text-control').val('');
 		$('.list emt').each(function(){
 			var target = $(this).html();
 			if(target.length < 5){
-				$(this).html("<img src='../images/face/"+target+".gif' />")
+				$(this).html("<img src='images/face/"+target+".gif' />")
 			}
 		});
 	});
-	$('.send .faces').on('click',function(){
+	$('.faces').on('click',function(){
 		if(tianchao.cur == 0){
 			$(this).addClass('on');
 			tianchao.cur =1;
@@ -42,10 +42,10 @@
     $('.face').append(tianchao.faceimg);
     $('.face li img').on('click',function(){
 		var target = $(this).attr('face');
-		var htmls = $('.send textarea').val();
-		$('.send textarea').val(htmls+target);
+		var htmls = $('.text-control').val();
+		$('.text-control').val(htmls+target);
 		$(this).parents('.face').hide(0);
-		$('.send .faces').removeClass('on');
+		$('.faces').removeClass('on');
 		tianchao.cur =0;
 	});
 $(".donate a").click(function(){

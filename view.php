@@ -13,11 +13,9 @@ $result = mysql_query($query);
 if(isset($_POST['submit'])){
     $uname = $_POST['username'];
     $plcontent = $_POST['content'];
-    $user_IP = ($_SERVER["HTTP_VIA"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
-    $user_IP = ($user_IP) ? $user_IP : $_SERVER["REMOTE_ADDR"];
     if($_REQUEST['vericode'] == $_SESSION['authcode']){
         if($uname != '' && $plcontent != ''){
-            $query = "insert into `reply` (`r_id`,`art_id`,`name`,`pl_content`,`pl_time`，`ip`) values (NULL,'$id','$uname','$plcontent',now(),'$user_IP')";
+            $query = "insert into `reply` (`r_id`,`art_id`,`name`,`pl_content`,`pl_time`) values (NULL,'$id','$uname','$plcontent',now())";
             if(mysql_query($query)){
                 echo "<script>alert('评论成功啦！');window.location.href='view.php?id=$id'</script>";
             }else{
@@ -80,41 +78,19 @@ if(isset($_POST['submit'])){
                 </div>
             </div>
             <div class="col-sm-12 TCPingLunBox">
-                <form class="form-horizontal" action="" method="post" id="TCpinglun">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">称呼：</label>
-                        <div class="col-sm-3">
-                            <input class="form-control username" type="text" name="username" placeholder="请输入您的称呼?"  />
-                            <small class="name-prompt"></small>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">内容：</label>
-                        <div class="col-sm-9 send">
-                            <textarea class="form-control content" name="content" rows="4" placeholder="说着玩呗"></textarea>
-                            <small class="content-prompt"></small>
-                            <a href="javascript:;" class='faces'></a>
-                            <div class="face"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">验证码：</label>
-                        <div class="col-sm-2">
-                            <input class="form-control veri" type="text" name="vericode">
-                        </div>
-                        <div class="col-sm-6">
-                            <img id="vericode_img" border="0" src="veri_zh.php?r=<?php echo rand();?>" />
+                <div class="col-sm-10 col-sm-offset-1 gb-box">
+                    <form class="comment-form" action="" method="post" id="TCpinglun">
+                        <input type="text" name="username" class="input-control" placeholder="姓名(*)">
+                        <input type="text" name="vericode" class="input-control" placeholder="验证码">
+                        <div><img id="vericode_img" border="0" src="veri_zh.php?r=<?php echo rand();?>" />
                             <a href="javascript:;" class="changecode" onclick="document.getElementById('vericode_img').src='veri_zh.php?r='+Math.random()">换一个？</a>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-2">
-                            <div class="col-sm-2">
-                                <button type="submit" name="submit" class="btn btn-primary submit">评论</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                        <textarea name="content" class="text-control"></textarea>
+                        <a href="javascript:;" class='faces'></a>
+                        <button type="submit" name="submit" class="btn btn-primary submit">评论</button>
+                    </form>
+                    <div class="face"></div>
+                </div>
             </div>
             <div class="col-sm-11 TCPingLunList">
                 <div class="row">
