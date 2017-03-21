@@ -21,8 +21,8 @@ if ($blog1){
     $blog3=mysql_query($sql3) or die ("留言板数据库创建失败!");
     if ($blog3)
         echo "留言板数据库创建成功".'<br/>';
-    $sql4="CREATE TABLE blog.reply(r_id INT(4)NOT NULL AUTO_INCREMENT,art_id INT(4) NOT NULL,name VARCHAR(50) NOT NULL,pl_time DATETIME NOT NULL ,pl_content TEXT NOT NULL,repl_content TEXT,repl_time DATETIME,PRIMARY KEY (id))";
-    $blog4=mysql_query($link,$sql4) or die ("文章回复创建失败");
+    $sql4="CREATE TABLE blog.reply(r_id INT(4)NOT NULL AUTO_INCREMENT,art_id INT(4) NOT NULL,name VARCHAR(50) NOT NULL,pl_time DATETIME NOT NULL ,pl_content TEXT NOT NULL,repl_content TEXT,repl_time DATETIME,PRIMARY KEY (r_id))";
+    $blog4=mysql_query($sql4) or die ("文章回复创建失败");
     if ($blog4)
         echo "文章回复创建成功！".'<br/>';
     $sql5="CREATE TABLE blog.register(id INT(4)NOT NULL AUTO_INCREMENT, user VARCHAR(8) NOT NULL, password VARCHAR(16) NOT NULL,PRIMARY KEY (id))";
