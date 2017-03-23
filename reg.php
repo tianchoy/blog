@@ -3,9 +3,6 @@
   @$user=$_POST['user'];
   @$password=$_POST['password'];
   if(isset($_POST['submit'])){
-	  
-	  echo "<script>alert('不好意思，暂不支持注册！')</script>";
-	  /*
   	$search = "select `user` from register where user='$user'";
   	$res=mysql_query($search);
   	if(mysql_num_rows($res)>0){
@@ -19,7 +16,7 @@
   	}
   	die;
   }
-  */
+ 
   }
 
 ?>
