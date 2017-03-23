@@ -32,7 +32,7 @@ include_once './inc/header.php';
                           <div class="content">
                               <p><?php echo iconv_substr($row['content'],0,200,'utf-8');?></p>
                           </div>
-                          <span class="love"><i class="loveIcon" rel="<?php echo $pic_id;?>"></i><?php echo $row['zan'] ?></span>
+                          <span class="love"><i class="loveIcon"></i><b rel="<?php echo $pic_id;?>"><?php echo $row['zan'] ?></b></span>
                       </div>
                   </div>
                 <?php
@@ -68,8 +68,8 @@ include_once './inc/header.php';
 </div>
 <?php include_once'./inc/footer.php'?>
 <script>
-    $(".love i").on('click',function(){
-        var love = $(this);
+    $(".love").on('click',function(){
+        var love = $(this).find("b");
         var id = love.attr("rel"); //对应id
         $.ajax({
             type:"POST",
