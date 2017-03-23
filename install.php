@@ -13,7 +13,7 @@ $sql="CREATE DATABASE blog";
 $blog1=mysql_query($sql,$link) or die ("blog数据库创建失败"."<br>");
 if ($blog1){
     echo "blog数据库创建成功！".'<br/>';
-    $sql2="CREATE TABLE blog.arts(id INT(4) NOT NULL AUTO_INCREMENT,title VARCHAR(50) NOT NULL,time DATE NOT NULL , content TEXT NOT NULL ,  hits INT(11) NOT NULL, art_love INT(4) ,PRIMARY KEY (id))";
+    $sql2="CREATE TABLE blog.arts(id INT(4) NOT NULL AUTO_INCREMENT,title VARCHAR(50) NOT NULL,time DATE NOT NULL , content TEXT NOT NULL ,  hits INT(11) NOT NULL, art_love INT(4) NOT NULL ,PRIMARY KEY (id))";
     $blog2=mysql_query($sql2) or die ("arts数据库创建失败！");
     if ($blog2)
         echo "arts 数据库创建成功！".'<br/>';
@@ -29,7 +29,7 @@ if ($blog1){
     $blog5=mysql_query($sql5) or die ("注册资料创建失败");
     if($blog5)
         echo '注册资料创建成功！'.'<br/>';
-    $sql6="CREATE TABLE blog.say(id INT(4) NOT NULL AUTO_INCREMENT, content TEXT NOT NULL,time DATE NOT NULL,art_love INT(4),PRIMARY KEY(id))";
+    $sql6="CREATE TABLE blog.say(id INT(4) NOT NULL AUTO_INCREMENT, content TEXT NOT NULL,time DATE NOT NULL,zan INT(4) NOT NULL,PRIMARY KEY(id))";
     $blog6=mysql_query($sql6) or die ("说说数据库失败");
     if($blog6)
         echo '说说数据库创建成功！'.'<br/>';
