@@ -85,16 +85,21 @@ h5{border-bottom: 1px dashed #e5e5e5;padding-bottom: 10px;}
 .comment-form{position: relative;margin: 0 auto;max-width:700px;padding: 10px 20px;border-radius: 3px;background: #fff;-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.1);box-shadow: 0 1px 4px rgba(0,0,0,.1);}
 .comment-form input{font-size: 13px;display: block;width: 100%;height: 34px;color: #313131;outline: 0;float: left;max-width: 200px;border:0;border-bottom: 1px dashed #ddd;border-radius: 0;}
 .comment-form textarea{font-size: 13px;display: block;width: 100%;color: #313131;border:0;outline: 0;overflow: hidden;height: 150px;padding: 10px 0;resize: none;border-radius: 0;}
-.submit{font-size: 13px;position: absolute;right: 20px;bottom: 20px;display: block;height: 32px;margin: 0 auto;padding: 0 20px;-webkit-transition-duration: .4s;transition-duration: .4s;text-align: center;color: #313131;border: 1px solid #f7f7f7;border-radius: 30px;background-color: #f7f7f7;}
+.submit{font-size: 13px;position: absolute;outline:none;right: 20px;bottom: 20px;display: block;height: 32px;margin: 0 auto;padding: 0 20px;-webkit-transition-duration: .4s;transition-duration: .4s;text-align: center;color: #313131;border: 1px solid #f7f7f7;border-radius: 30px;background-color: #f7f7f7;}
+.submit:hover,.submit:active,.submit:active:focus,.submit:focus {color:#6fa3ef;border:1px solid #6fa3ef;outline-style:none;background-color:#fff}
 .comment-form .faces{position: absolute;right: 100px;bottom: 20px;width: 25px;height: 25px;color: #333;text-align: right;line-height: 22px;font-size: 12px;display: block;float: right;background: url(../images/faces.png)no-repeat left center;margin-right: 20px;margin-top: 5px;background-position: 0 0;}
 .face{overflow: hidden;display: none;max-width: 700px;margin: 10px auto 0 auto;}
 .face li{width: 22px;height: 22px;margin:3px;float: left;list-style-type: none;}
 
 
+.aboutMe{padding:0;margin-bottom: 20px;}
+.aboutMe p{background-color: #f5f5f5;padding:10px 15px;color:#000;margin-bottom: 10px;}
 
+.link{padding:0;margin-bottom: 20px;}
+.link .title{background-color: #f5f5f5;padding:10px 15px;color:#000;margin-bottom: 10px;}
+.link a{display: inline-block;float: left;padding:10px 15px;}
 
-
-/*  鏂囩珷璇勮css  */
+    /*  鏂囩珷璇勮css  */
 .TCPingLunBox{margin: 50px auto;padding:0;}
 .TCPingLunBox label{color:#666;font-size: 14px;font-weight: 400;}
 #vericode_img{width: 160px;height:34px;display: inline-block;float: left;border:1px solid #ccc;}
