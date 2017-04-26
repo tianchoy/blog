@@ -50,6 +50,10 @@ include_once "./inc/header.php";
                 <p>请关注我的微信公众号：<strong>tianchaocc</strong></p>
                 <img src="images/getqrcode.jpeg">
             </div>
+            <div class="panel-body link">
+                <div class="title">友情链接</div>
+                <a href="#" target="_blank">友情链接</a>
+            </div>
         </div>
     </div>
 </div>
