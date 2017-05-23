@@ -40,15 +40,26 @@ include_once "./inc/header.php";
             </div>
             <div class="panel-body">
                 <img src="images/logo2.jpg" class="img-thumbnail">
-                <p>V-XII-MMXI / X-XVI-MMXV</p>
-                <p>网名：田超7C | 爱在枫叶下</p>
-                <p>职业：Web前端学徒，PHP孵蛋阶段的程序员</p>
-                <p>Email：tianchao7c@gmail.com</p>
-                <div class="music"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=544615954&auto=0&height=32"></iframe></div>
+                <p>V-XII-MMXI  &&  X-XVI-MMXV</p>
+            </div>
+            <div class="panel-body link">
+                <div class="title">联系我</div>
+                <div class="contact">
+                    <a href="http://weibo.com/aizaifengyexia" target="_blank"><i class="weibo"></i></a>
+                    <a href="https://twitter.com/tianchao1988" target="_blank"><i class="twitter"></i></a>
+                    <a href="https://www.facebook.com/tienchoy" target="_blank"><i class="facebook"></i></a>
+                    <a href="https://www.instagram.com/tianchao1988/" target="_blank"><i class="instagram"></i></a>
+                    <a href="http://music.163.com/#/artist?id=1057200" target="_blank"><i class="music"></i></a>
+                    <a href="https://site.douban.com/tianchao/" target="_blank"><i class="douban"></i></a>
+                </div>
             </div>
             <div class="panel-body aboutMe">
-                <p>请关注我的微信公众号：<strong>tianchaocc</strong></p>
+                <p>欢迎关注我的微信公众号：<strong>tianchaocc</strong></p>
                 <img src="images/getqrcode.jpeg">
+            </div>
+            <div class="panel-body link">
+                <div class="title">友情链接</div>
+                <a href="http://www.adexo.top" target="_blank">Adexo</a>
             </div>
         </div>
     </div>
