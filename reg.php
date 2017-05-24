@@ -3,9 +3,6 @@
   @$user=$_POST['user'];
   @$password=$_POST['password'];
   if(isset($_POST['submit'])){
-	  
-	  echo "<script>alert('不好意思，暂不支持注册！')</script>";
-	  /*
   	$search = "select `user` from register where user='$user'";
   	$res=mysql_query($search);
   	if(mysql_num_rows($res)>0){
@@ -14,12 +11,14 @@
     $query="insert into `register`(`id`,`user`,`password`) values (null,'".$_POST['user']."','".$_POST['password']."')";
   	if(mysql_query($query)){
   		echo '注册成功！', header("location: user.php");
+      unlink ( 'install.php' );
+      unlink ( 'reg.php' );
   	}else{
   		echo '失败，请重新尝试!',mysql_error();
   	}
   	die;
   }
-  */
+ 
   }
 
 ?>

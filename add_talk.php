@@ -17,7 +17,6 @@ include_once 'db.php';
 	 $query = "insert into `say` (`id`,`content`,`time`) values (NULL,'".$_POST['content']."',now())";
 	 if(mysql_query($query)){
 		  echo "发布成功！";
-         include_once './js/tza.js';
 		 }else{
 			   echo '抱歉啊，失败了，再试试吧？',mysql_error();
 			 }
