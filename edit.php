@@ -8,8 +8,7 @@ if(!isset($_SESSION['user'])){
    include_once './inc/meta.php';
 ?>
 	<title>编辑文章-田超的博客|原创独立个人博客</title>
-	<link href="http://cdn.staticfile.org/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/jquery.qeditor.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
 <?php
 include_once './inc/header.php';
 $id = $_GET['edit'];
@@ -43,7 +42,7 @@ if(isset($_POST['submit'])){
 				<div class="form-group">
 					<div class="col-sm-offset-1 ">
 						<div class="col-sm-2">
-							<button type="submit" name="submit" class="btn btn-primary submit">好了，发布吧</button>
+							<button type="submit" name="submit" class="btn btn-primary">好了，发布吧</button>
 						</div>
 					</div>
 				</div>
@@ -51,34 +50,12 @@ if(isset($_POST['submit'])){
 		</div>
 	</div>
 </div>
-	<script src="http://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/jquery.qeditor.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$("#post_body").qeditor({});
-
-		// Custom a toolbar icon
-		var toolbar = $("#post_body").parent().find(".qeditor_toolbar");
-		var link = $("<a href='#'><span class='icon-smile' title='smile'></span></a>");
-		link.click(function(){
-			alert("Put you custom toolbar event in here.");
-			return false;
-		});
-		toolbar.append(link);
-
-		// Custom Insert Image icon event
-		function changeInsertImageIconWithCustomEvent() {
-			var link = toolbar.find("a.qe-image");
-			link.attr("onclick","");
-			link.click(function(){
-				alert("New insert image event");
-				return false;
-			});
-			alert("Image icon event has changed, you can click it to test");
-			return false;
-		}
-
-		$("#submit").click(function(){
-			alert($("#post_body").val());
-		});
-	</script>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script>
+    layui.use('layedit', function(){
+      var layedit = layui.layedit;
+      layedit.build('post_body'); //建立编辑器
+    });
+</script>
 <?php require_once'./inc/footer.php'?>

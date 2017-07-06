@@ -7,11 +7,26 @@ if(!isset($_SESSION['user'])){
 //引入文件
 require_once 'db.php';
 include_once'./inc/meta.php';
+?>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="layui/layer/layer.js"></script>
+<?php
 $query = "delete from `arts` where `id`='".$_GET['del']."'";
 if(mysql_query($query)){
-	echo '<script>alert("删除成功");window.location.href="admin.php"</script>';
+	echo "<script>
+			layer.open({  
+				title: '删除文章',
+                content: '确定要删除吗？',   
+                yes: function(index, layero) {  
+                    window.location.href='admin.php';  
+                }
+            });  
+		</script>";
 }else{
-	echo '删除失败';
+	echo "
+		<script>
+			layer.msg('删除失败'); 
+		</script>
+	";
 }
 ?>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

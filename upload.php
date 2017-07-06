@@ -28,15 +28,15 @@ case 'image/jpeg' :$ok=1;
 }
 unset($upfile,$error,$name,$ok,$size,$tmp_name,$type);
 ?>
-<!doctype>
-<html>
-  <head>
-    <title>上传图片</title>
-  </head>
-  <body>
-    <form action="" method="post" enctype="multipart/form-data" name="upform">    
-    上传文件：<input type="file" name="upfile">
-        <input type="submit" value="上传"><br>
-    </form>
-  </body>
-</html>        
+<!--<!doctype>-->
+<!--<html>-->
+<!--  <head>-->
+<!--    <title>上传图片</title>-->
+<!--  </head>-->
+<!--  <body>-->
+<!--    <form action="" method="post" enctype="multipart/form-data" name="upform">    -->
+<!--    上传文件：<input type="file" name="upfile">-->
+<!--        <input type="submit" value="上传"><br>-->
+<!--    </form>-->
+<!--  </body>-->
+<!--</html>        -->

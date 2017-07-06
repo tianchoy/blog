@@ -13,7 +13,7 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="index.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/index.php'){echo 'active';}else{ echo '';} ?>">首页</a></li>
+                <li><a href="index.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/index.php' or ($_SERVER['REQUEST_URI'])== '/'){echo 'active';}else{ echo '';} ?>">首页</a></li>
                 <li><a href="talk.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/talk.php'){echo 'active';}else{ echo '';} ?>">说说</a></li>
                 <li><a href="liuyan.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/liuyan.php'){echo 'active';}else{ echo '';} ?>">留言</a></li>
                 <li><a href="about.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/about.php'){echo 'active';}else{ echo '';} ?>">关于</a></li>
