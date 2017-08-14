@@ -9,7 +9,7 @@
             type: 2,
             title: '私信',
             skin: 'layui-layer-rim', //加上边框
-            area: ['30%', '35%'],
+            area: ['30%', '40%'],
             content: ['message.php', 'no'] //iframe的url，no代表不显示滚动条
         });
     })
