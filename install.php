@@ -25,7 +25,7 @@ if ($blog1){
     $blog4=mysql_query($sql4) or die ("文章回复创建失败");
     if ($blog4)
         echo "文章回复创建成功！".'<br/>';
-    $sql5="CREATE TABLE blog.register(id INT(4)NOT NULL AUTO_INCREMENT, user VARCHAR(8) NOT NULL, password VARCHAR(16) NOT NULL,PRIMARY KEY (id))";
+    $sql5="CREATE TABLE blog.register(id INT(4)NOT NULL AUTO_INCREMENT, user VARCHAR(8) NOT NULL, password VARCHAR(40) NOT NULL,PRIMARY KEY (id))";
     $blog5=mysql_query($sql5) or die ("注册资料创建失败");
     if($blog5)
         echo '注册资料创建成功！'.'<br/>';
