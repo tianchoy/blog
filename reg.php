@@ -1,14 +1,14 @@
 <?php
   require_once'db.php';
   @$user=$_POST['user'];
-  @$password=$_POST['password'];
+  @$password=md5($_POST['password']);
   if(isset($_POST['submit'])){
   	$search = "select `user` from register where user='$user'";
   	$res=mysql_query($search);
   	if(mysql_num_rows($res)>0){
   	echo "<script>alert('用户名已经存在！')</script>";
   	}else {
-    $query="insert into `register`(`id`,`user`,`password`) values (null,'".$_POST['user']."','".$_POST['password']."')";
+    $query="insert into `register`(`id`,`user`,`password`) values (null,'$user','$password')";
   	if(mysql_query($query)){
   		echo '注册成功！', header("location: user.php");
       unlink ( 'install.php' );
