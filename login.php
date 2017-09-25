@@ -9,7 +9,7 @@ include_once './inc/header.php';
 <?php
 @session_start();
 require_once 'db.php';  //引入相关文件
-@$user=$_POST['user'];
+@$user=md5($_POST['user']);
 @$password=$_POST['password'];
 $query = "select * from register where user='$user' and password='$password'"; //对比输入的数据和数据库里的数据
 $res=mysql_query($query);
