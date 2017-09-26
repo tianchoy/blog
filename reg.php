@@ -16,7 +16,7 @@
     }else {
     $query="insert into `register`(`id`,`user`,`password`) values (null,'$user','$password')";
   	if(mysql_query($query)){
-  		echo '注册成功！', header("location: user.php");
+  		echo '注册成功！', header("location: admin.php");
       unlink ( 'install.php' );
       unlink ( 'reg.php' );
   	}else{
