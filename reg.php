@@ -2,12 +2,18 @@
   require_once'db.php';
   @$user=$_POST['user'];
   @$password=md5($_POST['password']);
+  @$password1 = md5($_POST['password1']);
   if(isset($_POST['submit'])){
   	$search = "select `user` from register where user='$user'";
   	$res=mysql_query($search);
   	if(mysql_num_rows($res)>0){
   	echo "<script>alert('用户名已经存在！')</script>";
-  	}else {
+    mysql_error();
+  	}else if($password1 != $password){
+      echo "<script>alert('两次的密码不一致！')</script>"
+
+      mysql_error();
+    }else {
     $query="insert into `register`(`id`,`user`,`password`) values (null,'$user','$password')";
   	if(mysql_query($query)){
   		echo '注册成功！', header("location: user.php");
