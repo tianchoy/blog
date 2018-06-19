@@ -1,6 +1,6 @@
 @charset "utf-8";
-
-a{font-family:"Open Sans", Arial, "Hiragino Sans GB","Microsoft YaHei", "寰蒋闆呴粦", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif,sans-serif;}
+body{font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+font-weight: 400;color: #333;font-size:14px;}
 a:link, a:visited, a:hover, a:active {text-decoration: none;}
 a:hover{color:#2e6da4}
 .active{display: block;background:#f1f1f1;}
@@ -8,13 +8,13 @@ a:hover{color:#2e6da4}
 h2{ font-size: 1.5em;text-align: center; cursor: pointer;}
 .post_body{margin-bottom: 30px;border-bottom:1px solid #f5f5f5}
 .post_body img{max-width: 100%;}
-.post_body p{margin:30px 0;line-height:27px;}
+.post_body p{margin:30px 0;line-height:27px;font-size:1.6rem;}
 .footer{text-align: center;}
 .view{position: relative}
 .blog-main{margin: 10px 0 50px 0;  padding: 10px 10px 30px 10px;}
 .blog-header {padding-bottom: 5px; text-align: center;}
-.blog-title { font-family: '寰蒋闆呴粦';height:30px; font-size:2em;margin-bottom: 20px;}
-.blog-content {width:100%;margin:0 auto; padding: 5px; color: #333;font-family: 'Noto Serif', 'Hiragino Sans GB', 'Microsoft Yahei', serif; font-size: 14px;text-align: justify;line-height: 30px;  }
+.blog-title { height:30px; font-size:2em;margin-bottom: 20px;}
+.blog-content {width:100%;margin:0 auto; padding: 5px; color: #333; font-size: 1.6rem;text-align: justify;line-height: 30px;  }
 .blog-content p{line-height:25px;margin-bottom: 20px;}
 .blog-content img{max-width: 100%;}
 .blog-side{margin:90px 0 0 30px;padding:0;width:250px;display: none;}
@@ -134,10 +134,13 @@ h5{border-bottom: 1px dashed #e5e5e5;padding-bottom: 10px;}
     p#back-to-top{position:fixed;  display:none;  bottom:10px;  right:0;  }
     p#back-to-top a{text-align:center;  text-decoration:none;  color:#d1d1d1;  display:block;  width:64px;  -moz-transition:color 1s;  -webkit-transition:color 1s;  -o-transition:color 1s;  }
     p#back-to-top a:hover{color:#979797;}
+    .layui-layer {width: 30% !important;height: 40% !important;}
 }
 @media (max-width: 799px) {
     .notFound{margin: 20% auto;}
     .blog-side-m{display: block;padding:0;}
     .blog-side-m .blog-myself{background: #f5f5f5;padding:15px;overflow: hidden}
     .blog-side-m .blog-myself .con p{font-size: 12px;color:#666;margin-top: 5px;}
+
+    .layui-layer {width: 96% !important;height: 70% !important;}
 }

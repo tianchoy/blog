@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['user'])){
+    header("location:login.php");
+    exit;
+}
 include_once 'db.php';
 include_once './inc/meta.php';
 ?>

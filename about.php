@@ -7,7 +7,7 @@ include_once "./inc/header.php";
 ?>
 <div class="container">
     <div class="col-sm-8">
-        <div class=" col-sm-offset-2 about">
+        <div class=" col-sm-offset-1 about">
             <div class="list-group">
                 <h3>About me</h3>
                 <p>平时喜欢踢足球，</p>
@@ -45,21 +45,12 @@ include_once "./inc/header.php";
             <div class="panel-body link">
                 <div class="title">联系我</div>
                 <div class="contact">
-                    <a href="http://weibo.com/aizaifengyexia" target="_blank"><i class="weibo"></i></a>
-                    <a href="https://twitter.com/tianchao1988" target="_blank"><i class="twitter"></i></a>
-                    <a href="https://www.facebook.com/tienchoy" target="_blank"><i class="facebook"></i></a>
-                    <a href="https://www.instagram.com/tianchao1988/" target="_blank"><i class="instagram"></i></a>
-                    <a href="http://music.163.com/#/artist?id=1057200" target="_blank"><i class="music"></i></a>
-                    <a href="https://site.douban.com/tianchao/" target="_blank"><i class="douban"></i></a>
+                    <p>如果程序上有什么问题，请发送邮件到：tienchao#qq.com（@替换#）</p>
                 </div>
             </div>
             <div class="panel-body aboutMe">
                 <p>欢迎关注我的微信公众号：<strong>tianchaocc</strong></p>
                 <img src="images/getqrcode.jpeg">
-            </div>
-            <div class="panel-body link">
-                <div class="title">友情链接</div>
-                <a href="http://www.adexo.top" target="_blank">Adexo</a>
             </div>
         </div>
     </div>

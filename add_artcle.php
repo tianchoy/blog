@@ -20,6 +20,8 @@ if(isset($_POST['submit'])){
 include_once './inc/meta.php';
 ?>
     <title>发布文章-田超的博客|原创独立个人博客</title>
+    <link href="http://cdn.staticfile.org/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.qeditor.css" type="text/css">
 <?php
 include_once './inc/header.php';
 ?>
@@ -36,8 +38,9 @@ include_once './inc/header.php';
                 <div class="form-group">
                     <label class="col-sm-1 control-label">内容:</label>
                     <div class="col-sm-9">
-                        <textarea id="post_body" class="form-control textarea" name="content" rows="10" placeholder="文章内容"></textarea>
+                        <textarea id="post_body" class="form-control text-control textarea " name="content" rows="10" placeholder="文章内容"></textarea>
                     </div>
+					<div class="face"></div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-1">
@@ -50,17 +53,28 @@ include_once './inc/header.php';
         </div>
     </div>
 </div>
-<script src="js/jquery.min.js"></script>
-<script type="text/javascript" src="layui/layui.js"></script>
-<script>
-    layui.use('layedit', function(){
-      var layedit = layui.layedit;
-        layedit.set({
-            uploadImage: {
-                url: 'upload', //接口url
-                type: 'post' //默认post
-            }
+<script src="http://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery.qeditor.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $("#post_body").qeditor({});
+    // Custom a toolbar icon
+    var toolbar = $("#post_body").parent().find(".qeditor_toolbar");
+    var link = $("<a href='javascript:;' class='faces'><span class='icon-smile' title='smile'></span></a>");
+   
+    toolbar.append(link);
+    // Custom Insert Image icon event
+    function changeInsertImageIconWithCustomEvent() {
+        var link = toolbar.find("a.qe-image");
+        link.attr("onclick","");
+        link.click(function(){
+            alert("New insert image event");
+            return false;
         });
-      layedit.build('post_body'); //建立编辑器
+        alert("Image icon event has changed, you can click it to test");
+        return false;
+    }
+    $("#submit").click(function(){
+        alert($("#post_body").val());
     });
 </script>
+<script type="text/javascript" src="./js/face.js"></script>

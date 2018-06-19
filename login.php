@@ -9,8 +9,16 @@ include_once './inc/header.php';
 <?php
 @session_start();
 require_once 'db.php';  //引入相关文件
-@$user=md5($_POST['user']);
-@$password=$_POST['password'];
+
+function secret($num){
+    $num = md5($num);
+    $num = substr($num,0,24);
+    $num = $num .'tc2xml14';
+    return $num;
+}
+
+@$user= $_POST['user'];
+@$password= secret($_POST['password']);
 $query = "select * from register where user='$user' and password='$password'"; //对比输入的数据和数据库里的数据
 $res=mysql_query($query);
 @$row=mysql_fetch_array($res);

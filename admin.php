@@ -30,6 +30,7 @@ include_once './inc/header.php';
             <li class="list-group-item"><?php echo '<a href="add_artcle.php" target="_blank">发布文章</a>'; ?> </li>
             <li class="list-group-item"><?php echo '<a href="comments.php" target="_blank">管理评论</a>'; ?></li>
             <li class="list-group-item"><?php echo '<a href="guestbook.php" target="_blank">管理留言</a>'; ?></li>
+            <li class="list-group-item"><?php echo '<a href="showMsg.php" target="_blank">查看私信</a>'; ?></li>
             <li class="list-group-item"><?php echo '<a href="login.php?action=logout">注销登录</a>'; ?></li>
         </ul>
     </div>
@@ -50,10 +51,10 @@ include_once './inc/header.php';
                 <div class="list-group-item">
                     <h5>
                         <a href="view.php?id=<?php echo $row['id']?>" target="_blank"><?php echo $row['title']?></a> /
-                            <a href="edit.php?edit=<?php echo $row['id']?>" target="_blank">编辑</a> /
+                            <a href="edit.php?edit=<?php echo $row['id']?>">编辑</a> /
                             <a href="del.php?del=<?php echo $row['id']?>">删除</a> /
                             点击量：<span class="badge"><?php echo $row['hits']?></span>
-                            / 点赞：<?php echo $row['art_love'] ?> / <?php echo $row['time']?>
+                            / 点赞：<span class="badge"><?php echo $row['art_love'] ?></span> / <span class="badge"><?php echo $row['time']?></span>
                     </h5>
                     <p><?php echo iconv_substr($row['content'],0,100,'utf-8');?>...</p>
                 </div>

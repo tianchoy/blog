@@ -8,28 +8,28 @@ include_once './inc/meta.php';
 include_once './inc/header.php';
 ?>
 <?php
-if(isset($_POST['submit'])){
-  $lyname = $_POST['name'];
-  $lycontent = $_POST['content'];
-    $user_IP = ($_SERVER["HTTP_VIA"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
-    $user_IP = ($user_IP) ? $user_IP : $_SERVER["REMOTE_ADDR"];
-
-    if($_REQUEST['vericode'] == $_SESSION['authcode']){
-      	if($lyname != '' && $lycontent != ''){
-          $query = "insert into `liuyan` (`id`,`name`,`content`,`time`,`ip`) values (NULL,'$lyname','$lycontent',now(),'$user_IP')";
-        if(mysql_query($query)){
-              echo '<script>alert("恭喜你，留言成功啦！");window.location.href="liuyan.php"</script>';
-        }else{
-          echo '<script>alert("失败了，再试试？");window.location.href="liuyan.php"</script>',mysql_error();
-        }
-      }else{
-          echo "<script>alert('姓名和内容不可为空');window.location.href='liuyan.php'</script>",mysql_error();
-      }
-    }else{
-      echo '<script>alert("验证码可能错了");window.location.href="liuyan.php"</script>';
-    }
-    die;
-}
+//if(isset($_POST['submit'])){
+//  $lyname = $_POST['name'];
+//  $lycontent = $_POST['content'];
+//    $user_IP = ($_SERVER["HTTP_VIA"]) ? $_SERVER["HTTP_X_FORWARDED_FOR"] : $_SERVER["REMOTE_ADDR"];
+//    $user_IP = ($user_IP) ? $user_IP : $_SERVER["REMOTE_ADDR"];
+//
+//    if($_REQUEST['vericode'] == $_SESSION['authcode']){
+//      	if($lyname != '' && $lycontent != ''){
+//          $query = "insert into `liuyan` (`id`,`name`,`content`,`time`,`ip`) values (NULL,'$lyname','$lycontent',now(),'$user_IP')";
+//        if(mysql_query($query)){
+//              echo '<script>alert("恭喜你，留言成功啦！");window.location.href="liuyan.php"</script>';
+//        }else{
+//          echo '<script>alert("失败了，再试试？");window.location.href="liuyan.php"</script>',mysql_error();
+//        }
+//      }else{
+//          echo "<script>alert('姓名和内容不可为空');window.location.href='liuyan.php'</script>",mysql_error();
+//      }
+//    }else{
+//      echo '<script>alert("验证码可能错了");window.location.href="liuyan.php"</script>';
+//    }
+//    die;
+//}
 ?>
   <div class="container">
       <div class="row">
@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
                   <div><img id="vericode_img" border="0" src="veri_zh.php?r=<?php echo rand();?>" />
                       <a href="javascript:;" class="changecode" onclick="document.getElementById('vericode_img').src='veri_zh.php?r='+Math.random()">换一个？</a>
                   </div>
-                  <textarea name="content" class="text-control"></textarea>
+                  <textarea name="content" class="text-control" placeholder="留言板已关闭"></textarea>
                   <a href="javascript:;" class='faces'></a>
                   <button type="submit" name="submit" class="btn btn-primary submit">提交</button>
               </form>

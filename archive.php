@@ -22,7 +22,7 @@ include_once 'db.php';
                     ?>
                     <tr>
                         <td><a href="view.php?id=<?php echo $row['id']?>" target="_blank"><?php echo $row['title']?></a></td>
-                        <td class="data"><?php echo iconv_substr($row['time'],0,10,'utf-8');?></td>
+                        <td><?php echo iconv_substr($row['time'],0,10,'utf-8');?></td>
                     </tr>
                 <?php
                 }
@@ -31,6 +31,5 @@ include_once 'db.php';
           </table>
 		  <p id="back-to-top"><a href="#top"><img src="images/backtop.png"></a></p>
         </div>
-<?php include_once'./inc/footer.php'; ?>
+<?php include_once'./inc/footer.php'?>
 
-<script></script>

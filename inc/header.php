@@ -13,11 +13,13 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="index.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/index.php' or ($_SERVER['REQUEST_URI'])== '/'){echo 'active';}else{ echo '';} ?>">首页</a></li>
+                <li><a href="index.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/index.php' or ($_SERVER['REQUEST_URI'])=='/'){echo 'active';}else{ echo '';} ?>">首页</a></li>
                 <li><a href="talk.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/talk.php'){echo 'active';}else{ echo '';} ?>">说说</a></li>
                 <li><a href="liuyan.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/liuyan.php'){echo 'active';}else{ echo '';} ?>">留言</a></li>
+                <li><a href="music" class="<?php if(($_SERVER['REQUEST_URI'])=='/music'){echo 'active';}else{ echo '';} ?>">音乐</a></li>
                 <li><a href="about.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/about.php'){echo 'active';}else{ echo '';} ?>">关于</a></li>
                 <li><a href="archive.php" class="<?php if(($_SERVER['REQUEST_URI'])=='/archive.php'){echo 'active';}else{ echo '';} ?>">归档</a></li>
+                <li><a href="javascript:void(0);" class="msg">私信</a></li>
             </ul>
             <form action="so.php" method="GET" class="navbar-form navbar-right">
                 <input type="text" name="search" class="form-control" placeholder="输入文章标题..." />
