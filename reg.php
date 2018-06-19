@@ -1,7 +1,11 @@
 <?php
   require_once'db.php';
   @$user=$_POST['user'];
-  @$password=$_POST['password'];
+  function secret($num){
+      $num = md5($num);
+      return $num;
+  }
+  @$password= secret($_POST['password']);
   if(isset($_POST['submit'])){
   	$search = "select `user` from register where user='$user'";
   	$res=mysql_query($search);
