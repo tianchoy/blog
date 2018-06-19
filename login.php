@@ -12,8 +12,6 @@ require_once 'db.php';  //引入相关文件
 
 function secret($num){
     $num = md5($num);
-    $num = substr($num,0,24);
-    $num = $num .'tc2xml14';
     return $num;
 }
 
